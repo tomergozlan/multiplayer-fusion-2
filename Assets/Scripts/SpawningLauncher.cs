@@ -33,8 +33,9 @@ public class SpawningLauncher : EmptyLauncher
 
     [SerializeField] InputAction moveAction = new InputAction(type: InputActionType.Button);
     [SerializeField] InputAction shootAction = new InputAction(type: InputActionType.Button);
-    private void OnEnable() { moveAction.Enable(); shootAction.Enable();  }
-    private void OnDisable() { moveAction.Disable(); shootAction.Disable(); }
+    [SerializeField] InputAction colorAction = new InputAction(type: InputActionType.Button);
+    private void OnEnable() { moveAction.Enable(); shootAction.Enable(); colorAction.Enable(); }
+    private void OnDisable() { moveAction.Disable(); shootAction.Disable(); colorAction.Disable();  }
     void OnValidate() {
         // Provide default bindings for the input actions. Based on answer by DMGregory: https://gamedev.stackexchange.com/a/205345/18261
         if (moveAction.bindings.Count == 0)
@@ -45,6 +46,8 @@ public class SpawningLauncher : EmptyLauncher
                 .With("Right", "<Keyboard>/rightArrow");
         if (shootAction.bindings.Count == 0)
             shootAction.AddBinding("<Keyboard>/space");
+        if (colorAction.bindings.Count == 0)
+            colorAction.AddBinding("<Keyboard>/C");
     }
 
     NetworkInputData inputData = new NetworkInputData();
@@ -53,11 +56,15 @@ public class SpawningLauncher : EmptyLauncher
         if (shootAction.WasPressedThisFrame()) {
             inputData.shootActionValue = true;
         }
+        if (colorAction.WasPressedThisFrame()) {
+            inputData.colorActionValue = true;
+        }
     }
 
     public override void OnInput(NetworkRunner runner, NetworkInput input) {
         inputData.moveActionValue = moveAction.ReadValue<Vector2>();
         input.Set(inputData);    // pass inputData by value 
         inputData.shootActionValue = false; // clear shoot flag
+        inputData.colorActionValue = false; // clear shoot flag
     }
 }

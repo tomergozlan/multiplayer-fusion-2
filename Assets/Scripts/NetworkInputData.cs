@@ -15,4 +15,5 @@ public struct NetworkInputData : INetworkInput
 {
     public Vector2 moveActionValue;
     public bool shootActionValue;
+    public bool colorActionValue;
 }

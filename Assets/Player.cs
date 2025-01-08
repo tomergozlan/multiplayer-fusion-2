@@ -15,7 +15,6 @@ public class Player: NetworkBehaviour
     private Vector3 moveDirection;
     public override void FixedUpdateNetwork() {
         if (GetInput(out NetworkInputData inputData)) {
-
             if (inputData.moveActionValue.magnitude > 0) {
                 inputData.moveActionValue.Normalize();   //  Ensure that the vector magnitude is 1, to prevent cheating.
                 moveDirection = new Vector3(inputData.moveActionValue.x, 0, inputData.moveActionValue.y);
@@ -24,11 +23,13 @@ public class Player: NetworkBehaviour
                 _cc.Move(DeltaX);
             }
 
-            if (inputData.shootActionValue) {
-                Debug.Log("SHOOT!");
-                Runner.Spawn(ballPrefab,
-                    transform.position + moveDirection, Quaternion.LookRotation(moveDirection),
-                    Object.InputAuthority);
+            if (HasStateAuthority) { // Only the server can spawn new objects ; otherwise you will get an exception "ClientCantSpawn".
+                if (inputData.shootActionValue) {
+                    Debug.Log("SHOOT!");
+                    Runner.Spawn(ballPrefab,
+                        transform.position + moveDirection, Quaternion.LookRotation(moveDirection),
+                        Object.InputAuthority);
+                }
             }
         }
     }

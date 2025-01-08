@@ -552,7 +552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8100148319601221671, guid: d5dc616368bd6a04084f1df1630149a9, type: 3}
       propertyPath: SortKey
-      value: 2157070596
+      value: 2460384751
       objectReference: {fileID: 0}
     - target: {fileID: 8771616593964601609, guid: d5dc616368bd6a04084f1df1630149a9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -645,7 +645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _runner: {fileID: 0}
   _playerPrefab:
-    RawGuidValue: 03f523969c990db499b6c314ac84f8c9
+    RawGuidValue: 4c484666dde29ec40baa583d0120f67a
   moveAction:
     m_Name: Move
     m_Type: 0
@@ -699,12 +699,12 @@ MonoBehaviour:
     m_Name: Shoot
     m_Type: 1
     m_ExpectedControlType: 
-    m_Id: 4e8575c1-bde5-4919-ae0a-b1bf520a182b
+    m_Id: fe98a344-d039-42cd-b338-c65a02677b42
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: e735d130-9c7b-4bc6-93de-7ff5f6ada8de
+      m_Id: 923bf6c2-5b61-4400-b441-cbeb184663c1
       m_Path: <Keyboard>/space
       m_Interactions: 
       m_Processors: 
@@ -716,12 +716,12 @@ MonoBehaviour:
     m_Name: Color
     m_Type: 1
     m_ExpectedControlType: 
-    m_Id: 9b29f9f9-b565-40e6-882c-61ebdef2b8d3
+    m_Id: e65ad298-89f2-4b49-99b3-d428aeffe8c6
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: ad4c1da4-5b6e-44c6-9015-2f21349fdabb
+      m_Id: 4ae6ff01-c561-422a-87f7-2c69e48ddb0e
       m_Path: <Keyboard>/C
       m_Interactions: 
       m_Processors: 
