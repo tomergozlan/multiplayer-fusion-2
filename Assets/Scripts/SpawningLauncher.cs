@@ -10,16 +10,18 @@ using UnityEngine.InputSystem;
 // This class launches Fusion NetworkRunner, and also spanws a new avatar whenever a player joins.
 public class SpawningLauncher : EmptyLauncher
 {
-    [SerializeField] private NetworkPrefabRef _playerPrefab;
+    [SerializeField] NetworkPrefabRef _playerPrefab;
+    [SerializeField] Transform[] spawnPoints;
     private Dictionary<PlayerRef, NetworkObject> _spawnedCharacters = new Dictionary<PlayerRef, NetworkObject>();
     public override void OnPlayerJoined(NetworkRunner runner, PlayerRef player) {
         Debug.Log($"Player {player} joined");
         bool isAllowedToSpawn = (runner.GameMode == GameMode.Shared)? 
             (player == runner.LocalPlayer):   // in Shared mode, the local player is allowed to spawn.
             runner.IsServer;                  // in Host or Server mode, only the server is allowed to spawn.
-        if (isAllowedToSpawn) { 
+        if (isAllowedToSpawn) {
             // Create a unique position for the player
-            Vector3 spawnPosition = new Vector3((player.RawEncoded % runner.Config.Simulation.PlayerCount) * 3, 1, 0);
+            Vector3 spawnPosition = spawnPoints[player.AsIndex % spawnPoints.Length].position;
+            //new Vector3((player.RawEncoded % runner.Config.Simulation.PlayerCount) * 3, 0, 0);
             NetworkObject networkPlayerObject = runner.Spawn(_playerPrefab, spawnPosition, Quaternion.identity, /*input authority:*/ player);
             // Keep track of the player avatars for easy access
             _spawnedCharacters.Add(player, networkPlayerObject);

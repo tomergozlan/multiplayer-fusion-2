@@ -200,13 +200,13 @@ GameObject:
   - component: {fileID: 4787378660217015756}
   - component: {fileID: 1875648075989424582}
   - component: {fileID: 1094818641468150983}
-  - component: {fileID: 6741906498057175776}
   - component: {fileID: 4288575238521794706}
   - component: {fileID: -5310042793968073326}
   - component: {fileID: 4269117471761529971}
+  - component: {fileID: 3898883314461130417}
   m_Layer: 0
   m_Name: PlayerWithHealth
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,10 +245,10 @@ MonoBehaviour:
   Flags: 262145
   NestedObjects: []
   NetworkedBehaviours:
-  - {fileID: 6741906498057175776}
   - {fileID: 4288575238521794706}
   - {fileID: -5310042793968073326}
   - {fileID: 4269117471761529971}
+  - {fileID: 3898883314461130417}
   ForceRemoteRenderTimeframe: 0
 --- !u!143 &1094818641468150983
 CharacterController:
@@ -275,25 +275,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6741906498057175776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4670411976358782716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378411a89480da345945c2f888327a2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _stateAuthorityChangeErrorCorrectionDelta: 0.15
-  gravity: -20
-  jumpImpulse: 8
-  acceleration: 10
-  braking: 10
-  maxSpeed: 2
-  rotationSpeed: 15
 --- !u!114 &4288575238521794706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfa1f482ceb61884db1fc780f2172dac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 3
   ballPrefab: {fileID: 7684413099106084849, guid: d5dc616368bd6a04084f1df1630149a9, type: 3}
 --- !u!114 &-5310042793968073326
 MonoBehaviour:
@@ -333,8 +314,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c99cf28c7dd04e944825508a6cbf8060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthDisplay: {fileID: 0}
+  HealthDisplay: {fileID: 5040636490624643891}
+  damagePerHit: 1
   _NetworkedHealth: 100
+--- !u!114 &3898883314461130417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4670411976358782716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stateAuthorityChangeErrorCorrectionDelta: 0.15
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 0
 --- !u!1 &6734283440618874081
 GameObject:
   m_ObjectHideFlags: 0

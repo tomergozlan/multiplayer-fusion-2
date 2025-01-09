@@ -70,7 +70,6 @@ public class EmptyLauncher: MonoBehaviour, INetworkRunnerCallbacks {
         Debug.Log($"OnReliableDataReceived {player} {key} {progress}");
     }
 
-    [SerializeField]
     protected NetworkRunner _runner;
 
     protected async void StartGame(GameMode mode, string sessionName) {

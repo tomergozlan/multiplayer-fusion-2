@@ -1,10 +1,11 @@
 using Fusion;
 using UnityEngine;
 
-public class Health : NetworkBehaviour
+public class Health: NetworkBehaviour
 {
     [SerializeField] NumberField HealthDisplay;
-    
+    [SerializeField] int damagePerHit = 1;
+
     [Networked]
     public int NetworkedHealth { get; set; } = 100;
 
@@ -13,24 +14,26 @@ public class Health : NetworkBehaviour
 
     public override void Spawned() {
         _changes = GetChangeDetector(ChangeDetector.Source.SimulationState);
+        HealthDisplay.SetNumber(NetworkedHealth);
     }
 
     public override void Render() {
         foreach (var change in _changes.DetectChanges(this, out var previousBuffer, out var currentBuffer)) {
             switch (change) {
                 case nameof(NetworkedHealth):
-                    var reader = GetPropertyReader<int>(nameof(NetworkedHealth));
-                    var (previous, current) = reader.Read(previousBuffer, currentBuffer);
-                    NetworkedHealthChanged(previous, current);
+                    //var reader = GetPropertyReader<int>(nameof(NetworkedHealth));
+                    //var (previous, current) = reader.Read(previousBuffer, currentBuffer);
+                    HealthDisplay.SetNumber(NetworkedHealth);
                     break;
             }
         }
     }
 
-    private void NetworkedHealthChanged(int previous, int current) {
-        // Here you would add code to update the player's healthbar.
-        Debug.Log($"Health of {name} changed from {previous} to {current}");
-        HealthDisplay.SetNumber(current);
+    private void OnTriggerEnter(Collider other) {
+        //Debug.Log("OnTriggerEnter " + other.gameObject.name + " " + other.gameObject.tag);
+        if (other.gameObject.tag=="Ball") {
+            DealDamageRpc(damagePerHit);
+        }
     }
 
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]

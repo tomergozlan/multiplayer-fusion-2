@@ -3,14 +3,14 @@ using Fusion;
 
 public class Player: NetworkBehaviour
 {
-    private NetworkCharacterController _cc;
+    private CharacterController _cc;
 
     [SerializeField] float speed = 5f;
     [SerializeField] GameObject ballPrefab;
 
     private Camera firstPersonCamera;
     public override void Spawned() {
-        _cc = GetComponent<NetworkCharacterController>();
+        _cc = GetComponent<CharacterController>();
         if (HasStateAuthority) {
             firstPersonCamera = Camera.main;
             var firstPersonCameraComponent = firstPersonCamera.GetComponent<FirstPersonCamera>();
