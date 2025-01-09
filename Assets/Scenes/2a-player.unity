@@ -470,8 +470,92 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbe0fb4226110344b4b108c0fa0e50e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _runner: {fileID: 0}
   _playerPrefab:
     RawGuidValue: 03f523969c990db499b6c314ac84f8c9
+  moveAction:
+    m_Name: Move
+    m_Type: 1
+    m_ExpectedControlType: 
+    m_Id: cae8817a-a9ce-4c96-9ea1-bb349982635e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 2DVector
+      m_Id: fddd8a90-8142-4edc-9f7a-74038a3708d5
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 4
+    - m_Name: Up
+      m_Id: ad88e51e-e624-43a7-96da-7d36d94ad41f
+      m_Path: <Keyboard>/upArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: Down
+      m_Id: 808d4291-9178-4b6e-89ed-86f265d87922
+      m_Path: <Keyboard>/downArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: Left
+      m_Id: 79adb892-b741-402d-a1e1-932fdeec599b
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: Right
+      m_Id: 2ab1ab5d-33f0-4b6c-9fb1-115b8da79691
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    m_Flags: 0
+  shootAction:
+    m_Name: Shoot
+    m_Type: 1
+    m_ExpectedControlType: 
+    m_Id: d842ca7e-87de-48f3-93c1-f8ec3db0c30f
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 3114ac06-514e-4c15-878f-c5125469c240
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Shoot
+      m_Flags: 0
+    m_Flags: 0
+  colorAction:
+    m_Name: Color
+    m_Type: 1
+    m_ExpectedControlType: 
+    m_Id: 5152cced-c18a-4c78-90a8-816a906021de
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: ce755903-c8a8-49cc-a065-1946f6904505
+      m_Path: <Keyboard>/C
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Color
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

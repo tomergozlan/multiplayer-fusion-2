@@ -47,7 +47,6 @@ public class EmptyLauncher: MonoBehaviour, INetworkRunnerCallbacks {
     public virtual void OnCustomAuthenticationResponse(NetworkRunner runner, Dictionary<string, object> data) {
         Debug.Log($"OnSessionListUpdated {data}");
     }
-
     public virtual void OnHostMigration(NetworkRunner runner, HostMigrationToken hostMigrationToken) {
         Debug.Log($"OnHostMigration {hostMigrationToken}");
     }
@@ -67,7 +66,6 @@ public class EmptyLauncher: MonoBehaviour, INetworkRunnerCallbacks {
     public virtual void OnReliableDataReceived(NetworkRunner runner, PlayerRef player, ReliableKey key, ArraySegment<byte> data) {
         Debug.Log($"OnReliableDataReceived {player} {key} {data}");
     }
-
     public virtual void OnReliableDataProgress(NetworkRunner runner, PlayerRef player, ReliableKey key, float progress) {
         Debug.Log($"OnReliableDataReceived {player} {key} {progress}");
     }

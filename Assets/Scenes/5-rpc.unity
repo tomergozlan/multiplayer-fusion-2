@@ -534,6 +534,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1593984731
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1416858500274889926, guid: d5dc616368bd6a04084f1df1630149a9, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684413099106084849, guid: d5dc616368bd6a04084f1df1630149a9, type: 3}
+      propertyPath: m_Name
+      value: Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100148319601221671, guid: d5dc616368bd6a04084f1df1630149a9, type: 3}
+      propertyPath: SortKey
+      value: 3193959694
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771616593964601609, guid: d5dc616368bd6a04084f1df1630149a9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.48607063
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771616593964601609, guid: d5dc616368bd6a04084f1df1630149a9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5941525
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771616593964601609, guid: d5dc616368bd6a04084f1df1630149a9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.5208559
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771616593964601609, guid: d5dc616368bd6a04084f1df1630149a9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771616593964601609, guid: d5dc616368bd6a04084f1df1630149a9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771616593964601609, guid: d5dc616368bd6a04084f1df1630149a9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771616593964601609, guid: d5dc616368bd6a04084f1df1630149a9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771616593964601609, guid: d5dc616368bd6a04084f1df1630149a9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771616593964601609, guid: d5dc616368bd6a04084f1df1630149a9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771616593964601609, guid: d5dc616368bd6a04084f1df1630149a9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d5dc616368bd6a04084f1df1630149a9, type: 3}
 --- !u!1 &1894103545
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,7 +645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _runner: {fileID: 0}
   _playerPrefab:
-    RawGuidValue: 03f523969c990db499b6c314ac84f8c9
+    RawGuidValue: 737e3a9fef532774daaa77b584c2b373
   moveAction:
     m_Name: Move
     m_Type: 0
@@ -634,12 +699,12 @@ MonoBehaviour:
     m_Name: Shoot
     m_Type: 1
     m_ExpectedControlType: 
-    m_Id: 6050a985-b6a0-43ab-9557-fe9cd2fc4370
+    m_Id: fe98a344-d039-42cd-b338-c65a02677b42
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 35acf753-bfaa-46cb-9bd6-8cdf640121e1
+      m_Id: 923bf6c2-5b61-4400-b441-cbeb184663c1
       m_Path: <Keyboard>/space
       m_Interactions: 
       m_Processors: 
@@ -651,12 +716,12 @@ MonoBehaviour:
     m_Name: Color
     m_Type: 1
     m_ExpectedControlType: 
-    m_Id: 60fd12dd-b9a4-4011-967b-fdbdab533618
+    m_Id: e65ad298-89f2-4b49-99b3-d428aeffe8c6
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 4c37728f-da59-4997-a2a1-d571d877bd63
+      m_Id: 4ae6ff01-c561-422a-87f7-2c69e48ddb0e
       m_Path: <Keyboard>/C
       m_Interactions: 
       m_Processors: 
@@ -673,3 +738,4 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 1894103547}
   - {fileID: 1249952647}
+  - {fileID: 1593984731}

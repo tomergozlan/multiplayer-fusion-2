@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
+  - component: {fileID: 330585548}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -256,6 +257,20 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &330585548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d511b4d01df4d5049a71fa62d5a25369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MouseSensitivity: 10
+  clampRotationAngle: 45
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,12 +649,12 @@ MonoBehaviour:
     m_Name: Shoot
     m_Type: 1
     m_ExpectedControlType: 
-    m_Id: 6050a985-b6a0-43ab-9557-fe9cd2fc4370
+    m_Id: 311d7c20-879e-4cc7-9c14-f5657fb97d64
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 35acf753-bfaa-46cb-9bd6-8cdf640121e1
+      m_Id: c13f0668-dc7a-4e1d-9455-631f2a255d58
       m_Path: <Keyboard>/space
       m_Interactions: 
       m_Processors: 
@@ -651,12 +666,12 @@ MonoBehaviour:
     m_Name: Color
     m_Type: 1
     m_ExpectedControlType: 
-    m_Id: 60fd12dd-b9a4-4011-967b-fdbdab533618
+    m_Id: 1bd73b45-6068-4c6a-a2df-e2be8edb6036
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 4c37728f-da59-4997-a2a1-d571d877bd63
+      m_Id: b34ffd85-cdac-4643-8aff-fc93068ca0b9
       m_Path: <Keyboard>/C
       m_Interactions: 
       m_Processors: 

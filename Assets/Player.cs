@@ -8,8 +8,15 @@ public class Player: NetworkBehaviour
     [SerializeField] float speed = 5f;
     [SerializeField] GameObject ballPrefab;
 
-    private void Awake() {
+    private Camera firstPersonCamera;
+    public override void Spawned() {
         _cc = GetComponent<NetworkCharacterController>();
+        if (HasStateAuthority) {
+            firstPersonCamera = Camera.main;
+            var firstPersonCameraComponent = firstPersonCamera.GetComponent<FirstPersonCamera>();
+            if (firstPersonCameraComponent && firstPersonCameraComponent.isActiveAndEnabled)
+                firstPersonCameraComponent.SetTarget(this.transform);
+        }
     }
 
     private Vector3 moveDirection;
