@@ -1,10 +1,7 @@
 // From the Fusion 2 Tutorial: https://doc.photonengine.com/fusion/current/tutorials/host-mode-basics/2-setting-up-a-scene#launching-fusion
 using UnityEngine;
 using Fusion;
-using Fusion.Sockets;
-using System;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
 // This class launches Fusion NetworkRunner, and also spanws a new avatar whenever a player joins.

@@ -9,6 +9,7 @@ public class Ball: NetworkBehaviour {
 
     [SerializeField] float lifeTime = 5.0f;
     [SerializeField] float speed = 5.0f;
+    [SerializeField] int damagePerHit = 1;
 
     public override void Spawned() {
         lifeTimer = TickTimer.CreateFromSeconds(Runner, lifeTime);
@@ -21,4 +22,13 @@ public class Ball: NetworkBehaviour {
         else
             transform.position += speed * transform.forward * Runner.DeltaTime;
     }
+
+    private void OnTriggerEnter(Collider other) {
+        //Debug.Log("OnTriggerEnter " + other.gameObject.name + " " + other.gameObject.tag);
+        Health health = other.GetComponent<Health>();
+        if (health != null) {
+            health.DealDamageRpc(damagePerHit);
+        }
+    }
+
 }

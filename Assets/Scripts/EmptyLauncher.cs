@@ -5,7 +5,6 @@ using Fusion.Sockets;
 using System;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
-using UnityEngine.Windows;
 
 // This class demonstrates the most basic procedure for launching Fusion NetworkRunner.
 // INetworkRunnerCallbacks is an interface that contains all "On*" methods relevant to connecting to Fusion Network Runner.

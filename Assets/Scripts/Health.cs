@@ -4,7 +4,6 @@ using UnityEngine;
 public class Health: NetworkBehaviour
 {
     [SerializeField] NumberField HealthDisplay;
-    [SerializeField] int damagePerHit = 1;
 
     [Networked]
     public int NetworkedHealth { get; set; } = 100;
@@ -26,13 +25,6 @@ public class Health: NetworkBehaviour
                     HealthDisplay.SetNumber(NetworkedHealth);
                     break;
             }
-        }
-    }
-
-    private void OnTriggerEnter(Collider other) {
-        //Debug.Log("OnTriggerEnter " + other.gameObject.name + " " + other.gameObject.tag);
-        if (other.gameObject.tag=="Ball") {
-            DealDamageRpc(damagePerHit);
         }
     }
 
